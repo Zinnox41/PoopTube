@@ -1,0 +1,18 @@
+.fondo{
+background-color: #747474  ;
+}
+
+.main .grid-videos {
+	display: grid;
+	grid-gap: 40px 20px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.main .grid-videos .video {
+	width: 100%;
+	display: block;
+}
+
+.main .grid-videos .video img {
+	width: 100%;
+}
