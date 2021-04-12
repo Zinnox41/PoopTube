@@ -22,4 +22,15 @@ body {
 	line-height: 1.5;
   }
 
- 
+
+  .a{
+
+	border:3px dashed orange
+  }
+ .centrar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: orange;
+	padding: 20px;
+ }
