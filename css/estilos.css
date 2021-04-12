@@ -1,5 +1,5 @@
 .fondo{
-background-color: #B3B3B3 ;
+background-color: #C6C6C6  ;
 }
 
 .main .grid-videos {
@@ -11,10 +11,13 @@ background-color: #B3B3B3 ;
 .main .grid-videos .video {
 	width: 100%;
 	display: block;
+	border: 3px solid #000000;
 }
 
-.main .grid-videos .video img {
+.main .grid-videos .video img
+ {
 	width: 100%;
+	border: 3px solid #000000;
 }
 
 body {
@@ -22,20 +25,51 @@ body {
 	line-height: 1.5;
   }
 
+.boton_1{
+    text-decoration: none;
+    font-family: helvetica;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 25px;
+    color: black;
+    background-color: #C6C6C6;
+    border-radius: 15px;
+    border: 3px black;
+}
 
-  .a{
+.letra{
+    color: black;
 
-	border:3px dashed orange
+}
+
+#myHeader {
+    background-color: black;
+    color: white;
+    padding: 40px;
+    text-align: center;
   }
- .centrar{
+.cuenta{
+    background-color:  black;
+    color: white;
+    padding: 10px;
+  } 
+@media screen and (max-width:500px){
+    .fondo{
+        background-color: #C6C6C6 ;
+    }
+    
+}
+
+.border{
+	border: 2px solid #000000;
+} 
+
+.centrar{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: #C9853C;
 	padding: 20px;
- }
-
- .iz{
-	 position: relative;
-	 left: auto;
  }
