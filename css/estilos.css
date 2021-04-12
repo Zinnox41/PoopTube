@@ -1,5 +1,5 @@
 .fondo{
-background-color: #C6C6C6  ;
+background-color: #B3B3B3 ;
 }
 
 .main .grid-videos {
@@ -31,6 +31,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: orange;
+	background: #C9853C;
 	padding: 20px;
+ }
+
+ .iz{
+	 position: relative;
+	 left: auto;
  }
