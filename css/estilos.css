@@ -202,8 +202,14 @@ footer{
     text-align: center;
 }
 
-.fondo_contenedor{
-    background-color: #fff;
+.fondo_contenedor_social{  /*Fondo de contenedor social */
+    background-color: #D4A86A;
+    margin-bottom: 20px;
+    
+}
+
+.fondo_contenedor{ /*Fondo de contenedor tendencias*/
+    background-color: white;
 }
 
 .imagenes_responsivas{
@@ -347,4 +353,5 @@ footer{
 	color: black;
 	cursor: pointer;
   }
+  /*aqui terminan las propiedades de los videos*/ 
   
