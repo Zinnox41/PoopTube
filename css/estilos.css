@@ -265,7 +265,9 @@ footer{
   
   .video-container {
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    background-color: orange;
+    border: 1px solid #ddd;
   }
   
   .thumbnail {
