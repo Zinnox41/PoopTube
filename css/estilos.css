@@ -266,13 +266,13 @@ footer{
   .video-container {
 	display: flex;
     flex-direction: column;
-    background-color: orange;
-    border: 1px solid #ddd;
   }
   
   .thumbnail {
 	position: relative;
-	display: flex;
+    display: flex;
+    background-color: orange;
+    border: 1px solid #ddd;
   }
   
   .thumbnail::before {
