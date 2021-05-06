@@ -356,4 +356,38 @@ footer{
 	cursor: pointer;
   }
   /*aqui terminan las propiedades de los videos*/ 
+
+  /*inicio del menu */ 
+  #btn-menu{
+    display: none;
+}
+.icon-menu{
+    display: none;
+}
+.nav ul{
+    margin: o;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    cursor: pointer;
+
+}
+@media (max-width:760px){
+    .icon-menu{
+        display: block;
+    }
+   
+
+    .nav ul{
+        flex-direction: column;
+        border-top: 1px solid #fffa;
+    }
+
+    #btn-menu:checked ~ .nav{
+        margin: 0;
+    }
+    
+    
+}
+/*fin del menu */ 
   
