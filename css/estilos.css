@@ -271,7 +271,7 @@ footer{
   .thumbnail {
 	position: relative;
     display: flex;
-    background-color: orange;
+    background-color: #553200;
     border: 1px solid #ddd;
   }
   
@@ -391,3 +391,53 @@ footer{
 }
 /*fin del menu */ 
   
+.comentario{
+    width: 485px;
+    height: 161%;
+}
+
+/*Contacto */ 
+.contacto{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: column;
+    background-size: cover;
+}
+.contacto .contenido{
+    max-width: 800px ;
+    text-align: center;
+}
+.contacto .contenido h2{
+    font-size:36px ;
+    font-weight: 500;
+    color: black;
+
+}
+.contacto .contenido p{
+    font-weight: 300;
+    color: black;
+
+}
+.containera{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.containera .infocontacto{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+.containera .infocontacto .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+
+}

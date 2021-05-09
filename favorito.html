@@ -14,34 +14,42 @@
 </head>
 
 <body class="fondo">
-
+  <!--Barra Menu Principal-->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="Principal.html">PoopTube</a>
       </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="Principal.html">Inicio</a></li>
+          <li><a href="tendencias.html">Tendencias</a></li>
+          <li><a href="historial.html">Historial</a></li>
+          <li><a href="favorito.html">Favoritos</a></li>
+          <li><a href="social.html">Social</a></li>
+          <li><a href="pooppremium.html">Poop Premium</a></li>
+          <li><a href="contactanos.html">Contáctanos</a></li>
 
-      <ul class="nav navbar-nav">
-        <li><a href="Principal.html">Inicio </a></li>
-        <li><a href="tendencias.html">Tendencias</a></li>
-        <li><a href="historial.html">Historial</a></li>
-        <li><a href="social.html">Social</a></li>
-        <li class="active"><a href="favorito.html">Favorito</a></li>
-        <li><a href="pooppremium.html">Poop Premium</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-      </ul>
-      <form class="navbar-form navbar-left" role="Realizar Busqueda">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Realizar Busqueda">
-        </div> <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="crear.html"><span class="glyphicon glyphicon-user"></span> Crear Cuenta</a></li>
-        <li><a href="ingresar.html"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
-      </ul>
+
+        </ul>
+        <form class="navbar-form navbar-left" action="/action_page.php">
+          <div class="form-group"> <input type="text" class="form-control" placeholder="Buscar" name="Buscar"
+              style="width: 400px;">
+          </div> <button type="submit" class="btn btn-default">Buscar</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="crear.html"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
+          <li><a href="ingresar.html"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
+  <!--Barra Menu Principal-->
   <!--Barra Menu Principal-->
   <div class="container">
     <main class="main">
@@ -49,162 +57,162 @@
       <div class="grid-videos">
 
     </main>
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
 
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/tJ4zZkjfml0" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/sz_t5CzBFaY" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/H5PhLHuFrzE" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/tJ4zZkjfml0" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/kKXzFv2ICrA" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/pA6wgtqImjg" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
-            frameborder="0"
-            llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/sz_t5CzBFaY" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
-            frameborder="0"
-            llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
-            frameborder="0"
-            llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
-            frameborder="0"
-            llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/H5PhLHuFrzE" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/kKXzFv2ICrA" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/pA6wgtqImjg" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
+          frameborder="0"
+          llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
+          frameborder="0"
+          llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
+          frameborder="0"
+          llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/76BKb_N36aE" title="YouTube video player"
+          frameborder="0"
+          llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+  <hr>
+  <!--Inicio de foster-->
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="colum1">
+          <h1>Datos sobre la pagina</h1>
+          <p>Esta Compañia esta dedicada a recopilar los videos poop de internet </p>
+
         </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+        <div class="colum2">
+          <h1>Redes Sociales</h1>
+          <div class="row">
+            <img src="imagenes/fb.png" class="redes_sociales">
+            <label>Siguenos en Facebook</label>
+          </div>
+          <div class="row">
+            <img src="imagenes/tw.png" class="redes_sociales">
+            <label>Siguenos en Twitter</label>
+          </div>
+          <div class="row">
+            <img src="imagenes/in.png" class="redes_sociales">
+            <label>Siguenos en Instagram</label>
+          </div>
+          <div class="row">
+            <img src="imagenes/gp.png" class="redes_sociales">
+            <label>Siguenos en GooglePlus</label>
+          </div>
+
+
+
         </div>
-        <div class="col-sm-4 col-md-4">
-          <iframe class="video thumbnail" src="https://www.youtube.com/embed/D9W4DLjmoOM" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+        <div class="colum3">
+          <h1>Informacion Contactos</h1>
+          <div class="row2"></div>
+
+          <label>La poop
+            Chile
+            Manuel Antonio Poop
+            Depto #4124
+          </label>
+          <div class="row2"></div>
+
+          <label>+569 49850512
+          </label>
+          <div class="row2"></div>
+
+          <label>PoopIndustries@Poopmail.com
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-footer">
+      <div class="footer">
+        <div class="copyright">
+          @2021 Todos los Derechos Reservados Corresponden a YouTube |
+          <a href="https://www.youtube.com/">YouTube </a>
+        </div>
+
+        <div class="information">
+          <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> |
+          <a href="">Terminos y Condiciones</a>
         </div>
       </div>
     </div>
+  </footer>
 
-
-
-    <hr>
-    <!--Inicio de foster-->
-    <footer>
-      <div class="container-footer-all">
-        <div class="container-body">
-          <div class="colum1">
-            <h1>Datos sobre la pagina</h1>
-            <p>Esta Compañia esta dedicada a recopilar los videos poop de internet </p>
-
-          </div>
-          <div class="colum2">
-            <h1>Redes Sociales</h1>
-            <div class="row">
-              <img src="imagenes/fb.png" class="redes_sociales">
-              <label>Siguenos en Facebook</label>
-            </div>
-            <div class="row">
-              <img src="imagenes/tw.png" class="redes_sociales">
-              <label>Siguenos en Twitter</label>
-            </div>
-            <div class="row">
-              <img src="imagenes/in.png" class="redes_sociales">
-              <label>Siguenos en Instagram</label>
-            </div>
-            <div class="row">
-              <img src="imagenes/gp.png" class="redes_sociales">
-              <label>Siguenos en GooglePlus</label>
-            </div>
-
-
-
-          </div>
-          <div class="colum3">
-            <h1>Informacion Contactos</h1>
-            <div class="row2"></div>
-
-            <label>La poop
-              Chile
-              Manuel Antonio Poop
-              Depto #4124
-            </label>
-            <div class="row2"></div>
-
-            <label>+569 49850512
-            </label>
-            <div class="row2"></div>
-
-            <label>PoopIndustries@Poopmail.com
-            </label>
-
-          </div>
-
-        </div>
-
-      </div>
-      <div class="container-footer">
-        <div class="footer">
-          <div class="copyright">
-            @2021 Todos los Derechos Reservados Corresponden a YouTube |
-            <a href="https://www.youtube.com/">YouTube </a>
-          </div>
-
-          <div class="information">
-            <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> |
-            <a href="">Terminos y Condiciones</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!--Fin del Fooster-->
+  <!--Fin del Fooster-->
 </body>
 
 </html>
