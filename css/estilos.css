@@ -459,11 +459,11 @@ footer{
 
    /*google maps responsive */ 
    .mapa-go{
-     max-width: 1000px;
+     max-width: 100%;
      
    }
    .googlemap{
-     width: 150%;
+     width: 100%;
    }
     /*google maps responsive */ 
 /*color de menu */ 
