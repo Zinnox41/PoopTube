@@ -465,7 +465,23 @@ footer{
    .googlemap{
      width: 100%;
    }
-    /*google maps responsive */ 
+    /*google maps responsive */
+    
+    /*iniciar usuario */ 
+.form-Inicio {
+    width: 510px;
+    height: 450px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+
 /*color de menu */ 
 
 
