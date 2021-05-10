@@ -466,16 +466,9 @@ footer{
      width: 150%;
    }
     /*google maps responsive */ 
-<<<<<<< HEAD
 /*color de menu */ 
-=======
 
-  /*color de menu */ 
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #805415;
-    background: #805415;
-}
->>>>>>> 48569f6bac84130218ec6b460cf68182e8400fb2
+
 .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
@@ -483,7 +476,6 @@ footer{
     margin-left: auto;
     background: #805415;
 }
-<<<<<<< HEAD
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     color: #fff;
@@ -496,6 +488,3 @@ footer{
 }
 
   
-=======
-  
->>>>>>> 48569f6bac84130218ec6b460cf68182e8400fb2
