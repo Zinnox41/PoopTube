@@ -455,4 +455,17 @@ footer{
     width:38%;
     
   }
+
+  /*color de menu */ 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #805415;
+    background: #805415;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #805415;
+}
   
