@@ -414,7 +414,7 @@ footer{
     border: 1px solid black;
     font-family: 'calibri';
     font-size: 18px;
-    color: white
+    color: black
   }
   
   .form-register p {
@@ -477,7 +477,7 @@ footer{
     margin-top: 100px;
     border-radius: 4px;
     font-family: 'calibri';
-    color: white;
+    color: black;
     box-shadow: 7px 13px 37px #D4A86A;
   }
   
