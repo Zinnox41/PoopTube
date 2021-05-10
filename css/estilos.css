@@ -480,6 +480,18 @@ footer{
     color: black;
     box-shadow: 7px 13px 37px #D4A86A;
   }
+  .form-contra{
+    width: 510px;
+    height: 450px;
+    background: #D4A86A;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #D4A86A;
+  }
   
 
 /*color de menu */ 
