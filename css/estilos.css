@@ -455,6 +455,7 @@ footer{
     width:38%;
     
   }
+<<<<<<< HEAD
   
 
    /*google maps responsive */ 
@@ -466,3 +467,19 @@ footer{
      width: 150%;
    }
     /*google maps responsive */ 
+=======
+
+  /*color de menu */ 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #805415;
+    background: #805415;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #805415;
+}
+  
+>>>>>>> fd59305183d77f20faccf1ba271fa284ac664da4
