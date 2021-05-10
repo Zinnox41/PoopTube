@@ -98,7 +98,7 @@ body {
 footer{
     width: 100%;
     background: #805415;
-    color:white;
+    color:black;
     
 
 }
@@ -122,7 +122,7 @@ footer{
 }
 .colum1 p{
     font-size: 22px;
-    color: #c7c7c7;
+    color: black;
     margin-top: 20px;
 }
 .colum2{
@@ -144,7 +144,7 @@ footer{
 .row label{
     margin-top: 10px;
     margin-left: 20px;
-    color: #c7c7c7;
+    color: black;
 }
 .colum3{
     max-width: 400;
@@ -455,7 +455,6 @@ footer{
     width:38%;
     
   }
-<<<<<<< HEAD
   
 
    /*google maps responsive */ 
@@ -467,7 +466,6 @@ footer{
      width: 150%;
    }
     /*google maps responsive */ 
-=======
 
   /*color de menu */ 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -482,4 +480,3 @@ footer{
     background: #805415;
 }
   
->>>>>>> fd59305183d77f20faccf1ba271fa284ac664da4
