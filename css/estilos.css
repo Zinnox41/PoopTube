@@ -97,6 +97,7 @@ body {
 }
 footer{
     width: 100%;
+    margin-top: 100px;
     background: #805415;
     color:black;
     
@@ -448,11 +449,13 @@ footer{
     }
   }
 
+  
 
   .alert-danger {
     color: white;
+    padding: 7px;
     background-color: #D4A86A;
-    width:38%;
+    width:100%;
     
   }
   
