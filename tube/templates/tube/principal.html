@@ -33,10 +33,10 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="{% url 'principal'%}">Inicio</a></li>
           <li><a href="{% url 'historial' %}">Historial</a></li>
-          <li><a href="favorito.html">Favoritos</a></li>
+          <li><a href="{% url 'favorito' %}">Favoritos</a></li>
 
-          <li><a href="pooppremium.html">Poop Premium</a></li>
-          <li><a href="contactanos.html">Contáctanos</a></li>
+          <li><a href="{% url 'pooppremium' %}">Poop Premium</a></li>
+          <li><a href="{% url 'contactanos' %}">Contáctanos</a></li>
           <body class="dark-theme">
             
          
@@ -56,8 +56,8 @@
 
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="crear.html"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
-          <li><a href="ingresar.html"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          <li><a href="{% url 'crear' %}"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
+          <li><a href="{% url 'ingresar' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
           
         </ul>
       </div>
@@ -81,17 +81,17 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <a href="reproductor.html"><img src="{% static 'tube/imagenes/poop.jpg' %}" alt="imagen1">
+          <a href="{% url 'reproductor' %}"><img src="{% static 'tube/imagenes/poop.jpg' %}" alt="imagen1">
 
           </a>
         </div>
 
         <div class="item">
-          <a href="reproductor.html"><img src="{% static 'tube/imagenes/pikachu1.jpg' %}" alt="imagen2"></a>
+          <a href="{% url 'reproductor' %}"><img src="{% static 'tube/imagenes/pikachu1.jpg' %}" alt="imagen2"></a>
         </div>
 
         <div class="item">
-          <a href="reproductor.html"><img src="{% static 'tube/imagenes/pikachu2.jpg' %}" alt="imagen3"></a>
+          <a href="{% url 'reproductor' %}"><img src="{% static 'tube/imagenes/pikachu2.jpg' %}" alt="imagen3"></a>
         </div>
 
 
@@ -119,17 +119,17 @@
       <button class="video-section-title-close">&times;</button>
     </h2>
     <article class="video-container">
-      <a href="reproductor.html" class="thumbnail" data-duration="12:24">
+      <a href="{% url 'reproductor' %}" class="thumbnail" data-duration="12:24">
         <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
       </a>
       <abbr title="TEXTO EMERGENTE QUE SE MOSTRARÁ AL PASAR EL CURSOR"></abbr>
       <div class="video-bottom-section">
-        <a href="reproductor.html">
+        <a href="{% url 'reproductor' %}">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
         </a>
         <div class="video-details">
-          <a href="reproductor.html" class="video-title">Video Title</a>
-          <a href="reproductor.html" class="video-channel-name">Channel Name</a>
+          <a href="{% url 'reproductor' %}" class="video-title">Video Title</a>
+          <a href="{% url 'reproductor' %}" class="video-channel-name">Channel Name</a>
           <div class="video-metadata">
             <span>12K views</span>
             •
@@ -139,16 +139,16 @@
       </div>
     </article>
     <article class="video-container">
-      <a href="reproductor.html" class="thumbnail" data-duration="12:24">
+      <a href="{% url 'reproductor' %}" class="thumbnail" data-duration="12:24">
         <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
       </a>
       <div class="video-bottom-section">
-        <a href="reproductor.html">
+        <a href="{% url 'reproductor' %}">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
         </a>
         <div class="video-details">
-          <a href="reproductor.html" class="video-title">Video Title</a>
-          <a href="reproductor.html" class="video-channel-name">Channel Name</a>
+          <a href="{% url 'reproductor' %}" class="video-title">Video Title</a>
+          <a href="{% url 'reproductor' %}" class="video-channel-name">Channel Name</a>
           <div class="video-metadata">
             <span>12K views</span>
             •
@@ -158,16 +158,16 @@
       </div>
     </article>
     <article class="video-container">
-      <a href="reproductor.html" class="thumbnail" data-duration="12:24">
+      <a href="{% url 'reproductor' %}" class="thumbnail" data-duration="12:24">
         <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
       </a>
       <div class="video-bottom-section">
-        <a href="reproductor.html">
+        <a href="{% url 'reproductor' %}">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
         </a>
         <div class="video-details">
-          <a href="reproductor.html" class="video-title">Video Title</a>
-          <a href="reproductor.html" class="video-channel-name">Channel Name</a>
+          <a href="{% url 'reproductor' %}" class="video-title">Video Title</a>
+          <a href="{% url 'reproductor' %}" class="video-channel-name">Channel Name</a>
           <div class="video-metadata">
             <span>12K views</span>
             •
@@ -177,16 +177,16 @@
       </div>
     </article>
     <article class="video-container">
-      <a href="reproductor.html" class="thumbnail" data-duration="12:24">
+      <a href="{% url 'reproductor' %}" class="thumbnail" data-duration="12:24">
         <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
       </a>
       <div class="video-bottom-section">
-        <a href="reproductor.html">
+        <a href="{% url 'reproductor' %}">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
         </a>
         <div class="video-details">
-          <a href="reproductor.html" class="video-title">Video Title</a>
-          <a href="reproductor.html" class="video-channel-name">Channel Name</a>
+          <a href="{% url 'reproductor' %}" class="video-title">Video Title</a>
+          <a href="{% url 'reproductor' %}" class="video-channel-name">Channel Name</a>
           <div class="video-metadata">
             <span>12K views</span>
             •
@@ -196,16 +196,16 @@
       </div>
     </article>
     <article class="video-container">
-      <a href="reproductor.html" class="thumbnail" data-duration="12:24">
+      <a href="{% url 'reproductor' %}" class="thumbnail" data-duration="12:24">
         <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
       </a>
       <div class="video-bottom-section">
-        <a href="reproductor.html">
+        <a href="{% url 'reproductor' %}">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
         </a>
         <div class="video-details">
-          <a href="reproductor.html" class="video-title">Video Title</a>
-          <a href="reproductor.html" class="video-channel-name">Channel Name</a>
+          <a href="{% url 'reproductor' %}" class="video-title">Video Title</a>
+          <a href="{% url 'reproductor' %}" class="video-channel-name">Channel Name</a>
           <div class="video-metadata">
             <span>12K views</span>
             •
@@ -546,27 +546,24 @@
 
         </div>
         <div class="colum2">
-        <h1>Redes Sociales</h1>
-        <div class="row">
-          <img src="{% static 'tube/imagenes/fb.png'  %}" class="redes_sociales">
-          <label>Siguenos en Facebook</label>
-        </div>
-        <div class="row">
-          <img src="{% static 'tube/imagenes/tw.png'  %}" class="redes_sociales">
-          <label>Siguenos en Twitter</label>
-        </div>
-        <div class="row">
-          <img src="{% static 'tube/imagenes/in.png'  %}" class="redes_sociales">
-          <label>Siguenos en Instagram</label>
-        </div>
-        <div class="row">
-          <img src="{% static 'tube/imagenes/gp.png'  %}" class="redes_sociales">
-          <label>Siguenos en GooglePlus</label>
-        </div>
-        
-
-
-      </div>
+          <h1>Redes Sociales</h1>
+         <div class="row">
+           <img src="{% static 'tube/imagenes/fb.png'  %}" class="redes_sociales">
+            <label>Siguenos en Facebook</label>
+         </div>
+         <div class="row">
+            <img src="{% static 'tube/imagenes/tw.png'  %}" class="redes_sociales">
+            <label>Siguenos en Twitter</label>
+         </div>
+          <div class="row">
+           <img src="{% static 'tube/imagenes/in.png'  %}" class="redes_sociales">
+           <label>Siguenos en Instagram</label>
+         </div>
+         <div class="row">
+            <img src="{% static 'tube/imagenes/gp.png'  %}" class="redes_sociales">
+            <label>Siguenos en GooglePlus</label>
+         </div>
+       </div>
 
 
 
