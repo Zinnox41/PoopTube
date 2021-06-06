@@ -25,13 +25,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="Principal.html" style="color: black;">PoopTube</a>
+        <a class="navbar-brand" href="{% url 'principal'%}" style="color: black;">PoopTube</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li ><a href="Principal.html">Inicio</a></li>
+          <li ><a href="{% url 'principal'%}">Inicio</a></li>
 
-          <li class="active"><a href="historial.html">Historial</a></li>
+          <li class="active"><a href="{% url 'historial' %}">Historial</a></li>
           <li ><a href="favorito.html">Favoritos</a></li>
 
           <li><a href="pooppremium.html">Poop Premium</a></li>
