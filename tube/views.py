@@ -11,7 +11,6 @@ def historial(request):
 def favorito(request):
     return render(request, 'tube/favorito.html')
 
-
 def pooppremium(request):
     return render(request, 'tube/pooppremium.html')
 
