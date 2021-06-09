@@ -6,18 +6,18 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link type="text/css" rel="stylesheet" href="{% static 'tube/css/estilos.css'  %}">
   <title>PoopTube</title>
   <link rel="icon" type="image/jpg" href="{% static 'tube/imagenes/logo.png'  %}">
+  <script src="{% static 'tube/java/validarNusuario.js' %}"></script>
+
 </head>
 
-
 <body class="fondo">
-  
   <!--Barra Menu Principal-->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -31,11 +31,14 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li ><a href="{% url 'principal'%}">Inicio</a></li>
+          <li><a href="{% url 'principal'%}">Inicio</a></li>
+
           <li><a href="{% url 'historial' %}">Historial</a></li>
           <li><a href="{% url 'favorito' %}">Favoritos</a></li>
-          <li class="active"><a href="{% url 'pooppremium' %}">Poop Premium</a></li>
+
+          <li><a href="{% url 'pooppremium' %}">Poop Premium</a></li>
           <li><a href="{% url 'contactanos' %}">Contáctanos</a></li>
+          
 
 
         </ul>
@@ -45,54 +48,61 @@
           </div> <button type="submit" class="btn btn-default">Buscar</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{% url 'modificar' %}">Modificar</a></li>
+          <li class="active"><a href="{% url 'modificar' %}">Modificar</a></li>
           <li><a href="{% url 'crear' %}"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
-          <li><a href="ingresar.html"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          <li><a href="{% url 'ingresar' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <!--Barra Menu Principal-->
-  <!--Barra Menu Principal-->
+  <!-- Formulario de Modificación -->
+  <div class="container">
+    <div class="row">
+        <!-- Manipular Messages-->
+        {% if messages %}
+        <div>
+            {% for x in messages %}
+            <p style="color: red;">{{ x }}</p><br>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form action="{% url 'modificar' %}" method="POST" id="form_modif" name="form_modif">
+            {% csrf_token %}
 
-  <!-- Banner-->
-  <div class="container" style="height: 70vh;">
-    <h1 id="myHeader">Cuenta Poop Premium</h1>
-    <h4 id="myHeader"> "PoopTube y PoopTube Music sin anuncios, sin conexión y en segundo plano</h4>
-  <form action="principal.html" method="GET" name="formulario_Premium" id="formulario_Premium" class="bla bar" onsubmit="verificarcontras(); return false">
+            <div class="form-group">
+                <label for="usuario">ID de Usuario : </label>
+                <input class="form-control" value="{{ usuario_modificar.id_usuario }}" id="usuario" name="usuario" type="number" required readonly>
+            </div>
 
-    <!--usuario-->
-    <div class="form-group">
-        <label>Nombre de usuario:</label>
-        <input type="text" class="form-control" name="nombreu" id="nombreu" placeholder="POOPTO" >
-    </div>
-    <!--correo-->
-    <div class="form-group">
-        <label>Correo electronico</label>
-        <input type="email" class="form-control" name="correo" id="correo" placeholder="Pooptube@ejemplo.cl" >
-    </div>
-    <!--contraseña-->
-    <div class="form-group">
-      <label for="pwd">Contraseña:</label>
-      <input type="password" class="form-control" id="contra" placeholder="xXxXxX" name="contra">
-    </div>
+            <div class="form-group">
+                <label for="nombre">Nombre del usuario: </label>
+                <input class="form-control" value="{{ usuario_modificar.nombre }}" id="nombre" name="nombre" type="text" required>
+            </div>
 
-    <div class="form-group">
-      <label>PAYPAL:</label>
-      <br>
-      <button><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HX66GABRQBQZW"><span class="glyphicon glyphicon-log-in"></span> PayPal</a></button>
-    </div>
-    <br>
-    <div class="form-group">
-      
-        <button type="reset" class="btn btn-default">Limpiar datos</button>
-        <button type="submit" class="btn btn-default">Crear usuario</button>
-    </div>
-  <br>
+            <div class="form-group">
+                <label for="email">Correo Electronico: </label>
+                <input class="form-control" value="{{ usuario_modificar.correo }}" id="email" name="email" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña: </label>
+                <input class="form-control" value="{{ usuario_modificar.contra }}" id="contrasena" name="contrasena" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="recontrasena">Repetir Contraseña: </label>
+                <input class="form-control" value="{{ usuario_modificar.contra2 }}" id="reontrasena" name="recontrasena" type="text" required>
+            </div>
 
-</form> 
+           
+
+            <button type="submit" class="btn btn-primary">Modificar</button>
+
+        </form>
+
+    </div>
 </div>
- 
+
+
   <!--Inicio de foster-->
   <footer>
     <div class="container-footer-all">
@@ -103,27 +113,27 @@
 
         </div>
         <div class="colum2">
-         <h1>Redes Sociales</h1>
+          <h1>Redes Sociales</h1>
           <div class="row">
-           <img src="{% static 'tube/imagenes/fb.png'  %}" class="redes_sociales">
-           <label>Siguenos en Facebook</label>
+            <img src="{% static 'tube/imagenes/fb.png'  %}" class="redes_sociales">
+            <label>Siguenos en Facebook</label>
           </div>
           <div class="row">
-           <img src="{% static 'tube/imagenes/tw.png'  %}" class="redes_sociales">
+            <img src="{% static 'tube/imagenes/tw.png'  %}" class="redes_sociales">
             <label>Siguenos en Twitter</label>
           </div>
           <div class="row">
             <img src="{% static 'tube/imagenes/in.png'  %}" class="redes_sociales">
             <label>Siguenos en Instagram</label>
-         </div>
-         <div class="row">
-           <img src="{% static 'tube/imagenes/gp.png'  %}" class="redes_sociales">
-           <label>Siguenos en GooglePlus</label>
+          </div>
+          <div class="row">
+            <img src="{% static 'tube/imagenes/gp.png'  %}" class="redes_sociales">
+            <label>Siguenos en GooglePlus</label>
+          </div>
+
+
+
         </div>
-        
-
-
-      </div>
         <div class="colum3">
           <h1>Informacion Contactos</h1>
           <div class="row2"></div>
@@ -163,6 +173,7 @@
   </footer>
 
   <!--Fin del Fooster-->
+
 </body>
 
 </html>

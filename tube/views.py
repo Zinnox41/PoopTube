@@ -28,3 +28,6 @@ def contra(request):
 
 def reproductor(request):
     return render(request, 'tube/reproductor.html')
+
+def modificar(request):
+    return render(request, 'tube/modificar.html')
