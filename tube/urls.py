@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import principal, historial, favorito, pooppremium, contactanos, crear, ingresar, contra, reproductor, modificar
+from .views import principal, historial, favorito, pooppremium, contactanos, crear, ingresar, contra, reproductor, modificar, listado, listado_usuario, eliminar_usuario, modificar_usuario
 
 
 urlpatterns = [
@@ -14,5 +14,10 @@ urlpatterns = [
     path('contra', contra, name="contra"),
     path('reproductor', reproductor, name="reproductor"),
     path('modificar', modificar, name="modificar"),
+    path('listado',listado,name="listado"),
+    path('registro_usuario',listado_usuario,name="registro_usuario"),
+    path('eliminar/<int:id>',eliminar_usuario,name="eliminar_usuario"),
+    path('modificar_usuario/<int:id>', modificar, name="modificar_usuario"),
+    path('modificar',modificar_usuario,name="modificar"),
+
 ]
-    
