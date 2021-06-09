@@ -70,16 +70,23 @@
             <div class="row">
                 <table border=2>
                     <tr>
+                        <td>id_usuario</td>
                         <td>nombre</td>
                         <td>correo</td>
                         <td>contra</td>
+                        <td>Acción</td>
                     </tr>
     
                     {% for m in Usuarios %}
                     <tr>
+                        <td>{{ m.id_usuario }}</td>
                         <td>{{ m.nombre }}</td>
                         <td>{{ m.correo }}</td>
                         <td>{{ m.contra }}</td>
+                    <td>
+                        <a href="{% url 'eliminar_usuario' m.id_usuario  %}">Eliminar</a><br>
+                        <a href="{% url 'modificar_usuario' m.id_usuario  %}">Modificar</a></td>
+                     </tr>
                         
                     {% endfor %}
     
