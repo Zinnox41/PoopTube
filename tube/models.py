@@ -1,53 +1,58 @@
 from django.db import models
 
+class Categoria(models.Model):
+    id_categoria = models.IntegerField(primary_key=True, verbose_name='Id de categoria')
+    descripcion_cate= models.CharField(max_length=80, verbose_name='descripcion de categoria ')
 
-
-class Premium(models.Model):
-    id_premium = models.IntegerField(primary_key=True, verbose_name='Id de Premium')
-    usuariopoop= models.CharField(max_length=40, verbose_name='Nombre de usuario ')
-    mail = models.CharField(max_length=40, verbose_name='correo de usuario')
-    contrapoop = models.CharField(max_length=40, verbose_name='contraseña del usuario')
-
-    def __str__(self):
-        return self.usuariopoop
-
-
-class Reproductor(models.Model):
-    id_reproductor = models.IntegerField(primary_key=True, verbose_name='Id de reproductor')
-    nombre_video = models.CharField(max_length=40, verbose_name='Nombre del video')
-    comentario = models.CharField(max_length=80, verbose_name='comentario')
     
 
-    def __str__(self):
-        return self.nombre_video
-
-class Contactanos(models.Model):
-    id_contactanos = models.IntegerField(primary_key=True, verbose_name='Id de Contactanos')
-    mailpoop = models.CharField(max_length=40, verbose_name='ingrese su correo')
-    comentariopoop = models.CharField(max_length=80, verbose_name='comentario')
+class Video(models.Model):
+    id_video = models.IntegerField(primary_key=True, verbose_name='Id de video')
+    url_vi = models.CharField(max_length=40, verbose_name='url ')
+    nombre_vi = models.CharField(max_length=40, verbose_name='Nombre del video')
+    descripcion_vi = models.CharField(max_length=40, verbose_name='descripcion del video')
+    publicacion_vi = models.DateField(auto_now_add=True)
+    img_minatura = models.ImageField(upload_to="imagen video", null=True)
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
     
+    def __str__(self):
+        return self.url_vi
+
+class Tipo_usuario(models.Model):
+    id_tipo_usu = models.IntegerField(primary_key=True, verbose_name='Id tipo de usuario')
+    nombre_tipo_usu = models.CharField(max_length=80, verbose_name='nombre tipo de usuario ')
 
     def __str__(self):
-        return self.comentariopoop
+        return self.nombre_tipo_usu
 
 class Usuario(models.Model):
     id_usuario = models.IntegerField(primary_key=True, verbose_name='Id de usuario')
-    nombre = models.CharField(max_length=40, verbose_name='Nombre de usuario')
-    correo = models.CharField(max_length=40, verbose_name='correo de usuario')
-    contra = models.CharField(max_length=40, verbose_name='contraseña del usuario')
-    contra2 = models.CharField(max_length=40, verbose_name='repetir contraseña del usuario')
-
+    nombre_usu = models.CharField(max_length=80, verbose_name='nombre tipo de usuario ')
+    apellido_usu = models.CharField(max_length=80, verbose_name='apellido de usuario ')
+    correo_usu = models.CharField(max_length=40, verbose_name='correo de usuario')
+    contra_usu = models.CharField(max_length=40, verbose_name='contraseña de usuario')
+    tipo_usuario = models.ForeignKey(Tipo_usuario,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre_usu
 
-class Main(models.Model):
-    id_main = models.IntegerField(primary_key=True, verbose_name='Id de main')
-    nombre_main = models.CharField(max_length=40, verbose_name='Nombre del main ')
-    premium = models.ForeignKey(Premium,on_delete=models.CASCADE)
-    reproductor = models.ForeignKey(Reproductor,on_delete=models.CASCADE)
-    contactanos = models.ForeignKey(Contactanos,on_delete=models.CASCADE)
+class Comentario(models.Model):
+    id_comentario = models.IntegerField(primary_key=True, verbose_name='Id de comentario')
+    descripcion_com= models.CharField(max_length=80, verbose_name='descripcion de comentario ')
+    publicacion_com = models.DateField(auto_now_add=True)
     usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    video = models.ForeignKey(Video,on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.nombre_main
+    
+
+class Historial(models.Model):
+    id_historial = models.IntegerField(primary_key=True, verbose_name='Id de historial')
+    visualizar_hi = models.DateField(auto_now_add=True)
+    usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    video = models.ForeignKey(Video,on_delete=models.CASCADE)
+
+class Favorito(models.Model):
+    id_favorito = models.IntegerField(primary_key=True, verbose_name='Id de favorito')
+    fecha = models.DateField(auto_now_add=True)
+    usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    video = models.ForeignKey(Video,on_delete=models.CASCADE)
