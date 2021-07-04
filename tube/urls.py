@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import principal, historial, favorito, contactanos, crear, ingresar, contra, reproductor, listado, lista_categoria
+from .views import principal, historial, favorito, contactanos, crear, ingresar, contra, reproductor, listado, lista_categoria,  guardar_video
 
 
 urlpatterns = [
@@ -14,5 +14,6 @@ urlpatterns = [
     path('reproductor', reproductor, name="reproductor"),
     path('listado', listado, name="listado"),
     path('registro_video', lista_categoria, name="registro_video"),
+    path('registro', guardar_video, name="registro"),
 
 ]

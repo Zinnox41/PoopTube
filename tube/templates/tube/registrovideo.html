@@ -63,7 +63,7 @@
             <h1 id="myHeader">Registro de videos</h1>
         </div>
         <div class="row">
-            <form action="" id="registro_videos" name="registro_videos" method="GET">
+            <form action="{%url 'registro' %}"id="registro_videos" name="registro_videos" method="GET">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Codigo id:</label>

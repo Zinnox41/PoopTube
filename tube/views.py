@@ -39,3 +39,16 @@ def lista_categoria(request):
     categorias = Categoria.objects.all()
     contexto = {"categorias_video" : categorias}
     return render(request,'tube/registrovideo.html',contexto)
+
+def guardar_video(request):
+    n_codigo = request.GET['codigo']
+    url_m = request.GET['url']
+    nombre_m = request.GET['nombre']
+    descripcion_m = request.GET['descripcion']
+    categoria_m = request.POST['categoria']
+    categoria_m2 = Categoria.objects.get(id_categoria = categoria_m )
+    Usuario.objects.create(id_video = n_codigo, url_vi = url_m, nombre_vi = nombre_m, descripcion_vi = descripcion_m, categoria = categoria_m2 )
+
+    messages.success(request,'video Registrado Correctamente')
+
+    return redirect('registro_video')
