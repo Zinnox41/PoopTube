@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Video, Categoria
 from django.contrib import messages
 
 
@@ -27,3 +28,14 @@ def contra(request):
 
 def reproductor(request):
     return render(request, 'tube/reproductor.html')
+
+def listado(request):
+    videos = Video.objects.all()
+    contexto = {"Videos": videos}
+    
+    return render(request, 'tube/listadoVideo.html',contexto)
+
+def lista_categoria(request):
+    categorias = Categoria.objects.all()
+    contexto = {"categorias_video" : categorias}
+    return render(request,'tube/registrovideo.html',contexto)
