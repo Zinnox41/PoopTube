@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'social_django',
     'rest_framework',
     'poop2',
-   
+    'rest_framework.authtoken',
 
 ]
 MIDDLEWARE = [
