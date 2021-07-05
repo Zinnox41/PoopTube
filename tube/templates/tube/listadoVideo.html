@@ -55,7 +55,7 @@
     </div>
   </nav>
   <!--Barra Menu Principal-->
-  <div class="container espaciado" style="height: 63vh;">
+  <div class="container espaciado" style="height: 110vh;">
     <div class="row">
       <h1 id="myHeader">Listado de videos</h1>
       <!-- Manipular Messages-->
@@ -73,6 +73,8 @@
           <td>Id</td>
           <td>Url</td>
           <td>Nombre</td>
+          <td>descripcion</td>
+          <td>foto</td>
           <td>Categoria</td>
 
         </tr>
@@ -81,6 +83,12 @@
           <td>{{ m.id_video }}</td>
           <td>{{ m.url_vi }}</td>
           <td>{{ m.nombre_vi }}</td>
+          <td>{{ m.descripcion_vi }}</td>
+          <td>
+            {% if m.img_minatura %}
+            <img src="{{ m.img_minatura.url }}" style="width: 100% ;max-width: 150px;">
+            {% endif %}
+          </td>
           <td>{{ m.categoria.descripcion_cate }}</td>
           <td><a href="{% url 'eliminar_video' m.id_video %}">Eliminar</a><br>
             <a href="{% url 'modificar_video' m.id_video %}">Modificar</a></td>

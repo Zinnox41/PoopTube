@@ -8,7 +8,7 @@ class Categoria(models.Model):
 
 class Video(models.Model):
     id_video = models.IntegerField(primary_key=True, verbose_name='Id de video')
-    url_vi = models.CharField(max_length=40, verbose_name='url ')
+    url_vi = models.CharField(max_length=80, verbose_name='url ')
     nombre_vi = models.CharField(max_length=40, verbose_name='Nombre del video')
     descripcion_vi = models.CharField(max_length=40, verbose_name='descripcion del video')
     publicacion_vi = models.DateField(auto_now_add=True)

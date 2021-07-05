@@ -45,9 +45,10 @@ def guardar_video(request):
     url_m = request.POST['url']
     nombre_m = request.POST['nombre']
     descripcion_m = request.POST['descripcion']
+    foto_m = request.FILES['img_foto']
     categoria_m = request.POST['categoria']
     categoria_m2 = Categoria.objects.get(id_categoria = categoria_m )
-    Usuario.objects.create(id_video = n_codigo, url_vi = url_m, nombre_vi = nombre_m, descripcion_vi = descripcion_m, categoria = categoria_m2 )
+    Video.objects.create(id_video = n_codigo, url_vi = url_m, nombre_vi = nombre_m, descripcion_vi = descripcion_m, img_minatura = foto_m, categoria = categoria_m2 )
 
     messages.success(request,'video Registrado Correctamente')
 
@@ -72,18 +73,20 @@ def modificar(request, id):
     return render(request,'tube/formulario_modificar.html', contexto)
 
 def modificar_video(request):
-    id_cod = request.POST['codigo']
+    n_codigo = request.POST['codigo']
     url_m = request.POST['url']
     nombre_m = request.POST['nombre']
     descripcion_m = request.POST['descripcion']
+    foto_m = request.FILES['img_foto']
     categoria_m = request.POST['categoria']
 
     categoria_ob = categoria.objects.get(id_categoria = categoria_m)
 
-    video_m = Video.objects.get(id_video = id_cod )
+    video_m = Video.objects.get(id_video = n_codigo )
     video_m.url_vi = url_m
     video_m.nombre_vi = nombre_m
     video_m.descripcion_vi = descripcion_m
+    video_m.img_minatura = foto_m
     video_m.categoria = categoria_ob
     video_m.save()
 
