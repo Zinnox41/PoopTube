@@ -147,6 +147,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'imagen video')
 
 LOGIN_REDIRECT_URL = 'principal'
 
+LOGIN_URL = 'login'
+
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
