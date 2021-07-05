@@ -50,8 +50,14 @@
 
                     <li><a href=""><span class="glyphicon glyphicon-user"></span> Crear Usuario</a>
                     </li>
-                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <p>Bienvenido {{user.username}}</p>
+                        <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span>Cerrar Sesion</a>
                     </li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -70,7 +76,7 @@
             {% endif %}
         </div>
         <div class="row">
-            <form action=""id="registro_videos" name="registro_videos" method="POST">
+            <form action="" id="registro_videos" name="registro_videos" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Codigo id:</label>

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import principal, historial, favorito, contactanos, contra, reproductor, listado, lista_categoria,  guardar_video, eliminar_video, modificar, modificar_video
+from .views import principal, historial, favorito, contactanos, contra, reproductor, listado, lista_categoria,  guardar_video, eliminar_video, modificar, modificar_video, login_view, logout_view, form_login
 
 
 urlpatterns = [
@@ -18,6 +18,9 @@ urlpatterns = [
     path('modificar_video/<int:id>',modificar, name="modificar_video"),
     path('modificar',modificar_video, name="modificar"),
 
-    path('login/',LoginView.as_view(template_name='tube/ingresar.html'),name="login"),
+    path('login/',form_login, name="login"),
+    path('sesion/',login_view, name="sesion"),
+    path('logout/',logout_view,name="logout"),
+    #path('logout/',LogoutView.as_view(template_name='tube/principal.html'),name="logout"),
 
 ]

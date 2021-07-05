@@ -48,7 +48,14 @@
         <ul class="nav navbar-nav navbar-right">
           
           <li><a href=""><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
-          <li class="active"> <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <p>Bienvenido {{user.username}}</p>
+            <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span>Cerrar Sesion</a>
+          </li>
+          {% else %}
+          <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -58,6 +65,7 @@
 
   <div class="container" style="height: 70vh;">
       <h1 id="myHeader">Inicie sesion  </h1>
+      <hr>
   <div class="row">
       <!-- Manipular Messages-->
       {% if messages %}
@@ -68,7 +76,7 @@
       </div>
       {% endif %}
 
-      <form action="" enctype="" id="formulario_inicio" name="formulario_inicio" method="POST">
+      <form action="{% url 'sesion' %}" id="formulario_inicio" name="formulario_inicio" method="POST">
           {% csrf_token %}
           <div class="form-group">
             <label>Nombre de Usuario:</label>
@@ -84,7 +92,8 @@
           </div>
 
 
-          
+          <hr>
+          <hr>
 
           <div id="error" class="alert alert-danger"></div>
           <button type="reset" class="btn btn-default">Limpiar datos</button>

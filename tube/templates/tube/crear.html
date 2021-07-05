@@ -36,7 +36,7 @@
           <li><a href="{% url 'historial' %}">Historial</a></li>
           <li><a href="{% url 'favorito' %}">Favoritos</a></li>
 
-         
+
           <li><a href="{% url 'contactanos' %}">Contáctanos</a></li>
 
 
@@ -47,9 +47,16 @@
           </div> <button type="submit" class="btn btn-default">Buscar</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-        
+
           <li class="active"><a href=""><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <p>Bienvenido {{user.username}}</p>
+            <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span>Cerrar Sesion</a>
+          </li>
+          {% else %}
           <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -57,42 +64,43 @@
   <!--Barra Menu Principal-->
   <div class="container" style="height: 70vh;">
     <h1 id="myHeader">Registrate </h1>
-  <form action="principal.html" method="GET" name="formulario_crearusuario" id="formulario_CrearUsuario" class="bla bar" onsubmit="verificarcontras(); return false">
+    <form action="principal.html" method="GET" name="formulario_crearusuario" id="formulario_CrearUsuario"
+      class="bla bar" onsubmit="verificarcontras(); return false">
 
-    <!--usuario-->
-    <div class="form-group">
+      <!--usuario-->
+      <div class="form-group">
         <label>Nombre de usuario:</label>
-        <input type="text" class="form-control" name="nombreu" id="nombreu" placeholder="POOPTO" >
-    </div>
-    <!--correo-->
-    <div class="form-group">
+        <input type="text" class="form-control" name="nombreu" id="nombreu" placeholder="POOPTO">
+      </div>
+      <!--correo-->
+      <div class="form-group">
         <label>Correo electronico</label>
-        <input type="email" class="form-control" name="correo" id="correo" placeholder="Pooptube@ejemplo.cl" >
-    </div>
-    <!--contraseña-->
-    <div class="form-group">
-      <label for="pwd">Contraseña:</label>
-      <input type="password" class="form-control" id="contra" placeholder="xXxXxX" name="contra">
-    </div>
-    <!--repetir contraseña-->
-    <div class="form-group">
+        <input type="email" class="form-control" name="correo" id="correo" placeholder="Pooptube@ejemplo.cl">
+      </div>
+      <!--contraseña-->
+      <div class="form-group">
+        <label for="pwd">Contraseña:</label>
+        <input type="password" class="form-control" id="contra" placeholder="xXxXxX" name="contra">
+      </div>
+      <!--repetir contraseña-->
+      <div class="form-group">
         <label>Repita su contraseña</label>
-        <input type="password" class="form-control" name ="ccontra"id="ccontra" placeholder="xXxXxXx" >
-    </div>
-  <br>
-    
-   <!--Botones de limpiar datos y crear usuario-->
-    <div class="form-group">
+        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="xXxXxXx">
+      </div>
+      <br>
+
+      <!--Botones de limpiar datos y crear usuario-->
+      <div class="form-group">
         <div id="error" class="alert alert-danger"></div>
         <button type="reset" class="btn btn-default">Limpiar datos</button>
         <button type="submit" class="btn btn-default">Crear usuario</button>
-    </div>
-  <br>
-</form> 
-</div>
+      </div>
+      <br>
+    </form>
+  </div>
 
 
-  
+
 
   <!--Inicio de foster-->
   <footer>

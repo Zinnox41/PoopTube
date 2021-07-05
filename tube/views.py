@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Video, Categoria
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
@@ -88,4 +89,26 @@ def modificar_video(request):
     
     return redirect('listado')
 
+def form_login(request):
+    return render(request,'tube/ingresar.html')
+    
+def login_view(request):
+    u = request.POST['username']
+    c = request.POST['password']
+    user = authenticate(username = u, password = c)
 
+    if user is not None:
+        if user.is_active:
+            login(request,user)
+            messages.success(request,'Login Realizado')
+            return redirect('principal')
+        else:
+            messages.error(request,'Usuario inactivo')
+    else:
+        messages.error(request,'Usuario o Contraseña incorrecta')
+    
+    return redirect('login')
+
+def logout_view(request):
+    logout(request)
+    return redirect('principal')

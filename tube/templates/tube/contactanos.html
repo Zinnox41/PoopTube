@@ -33,7 +33,7 @@
                     <li><a href="{% url 'principal'%}">Inicio</a></li>
                     <li><a href="{% url 'historial' %}">Historial</a></li>
                     <li><a href="{% url 'favorito' %}">Favoritos</a></li>
-                    
+
                     <li class="active"><a href="{% url 'contactanos' %}">Contáctanos</a></li>
 
 
@@ -45,9 +45,16 @@
                     </div> <button type="submit" class="btn btn-default">Buscar</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    
+
                     <li><a href=><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <p>Bienvenido {{user.username}}</p>
+                        <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span>Cerrar Sesion</a>
+                    </li>
+                    {% else %}
                     <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
