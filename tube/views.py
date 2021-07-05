@@ -18,6 +18,9 @@ def favorito(request):
 def contactanos(request):
     return render(request, 'tube/contactanos.html')
 
+def crear(request):
+    return render(request, 'tube/crear.html')
+
 def contra(request):
     return render(request, 'tube/contra.html')
 
