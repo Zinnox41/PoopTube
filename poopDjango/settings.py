@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tube',
     'social_django',
+    'rest_framework',
+    'poop2',
    
 
 ]

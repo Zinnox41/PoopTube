@@ -22,10 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tube.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
+    path('api/',include('poop2.urls')),
     
     
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
     
