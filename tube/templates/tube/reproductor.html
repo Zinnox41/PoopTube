@@ -12,6 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://file.myfontastic.com/tc26fJHv8scB3d4vHQRRsV/icons.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="{% static 'tube/css/estilos.css'  %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <title>PoopTube</title>
   <link rel="icon" type="image/jpg" href="{% static 'tube/imagenes/logo.png'  %}">
   <script src="{% static 'tube/java/validarInicio.js'  %}"></script>
@@ -82,7 +83,7 @@
 
 
 
-    <div class="row">
+    <div class="container">
       <div class="video-bottom-section">
         <a href="#">
           <img class="channel-icon" src="http://unsplash.it/36/36?gravity=center" />
@@ -91,9 +92,21 @@
           <a href="#" class="video-title">Gato bailando sin sentido 1 hora</a>
           <a href="#" class="video-channel-name">Gato poop</a>
           <div class="video-metadata">
-            <span>1000b views</span>
+            <span>1000b visualizaciones</span>
             •
-            <span>1 week ago</span>
+            <span>1 Semana atras</span>
+          </div>
+          <div class="unga">
+            <button  class="fa fa-thumbs-up" id="likebtn">
+              <span>12m Me gusta</span>
+              
+              
+            </button>
+            <button class="fa fa-thumbs-down id="dislikebtn">
+              <span>1 No me gusta</span>
+              
+              
+            </button>
           </div>
         </div>
       </div>
