@@ -34,7 +34,7 @@
                     <li class="active"><a href="{% url 'historial' %}">Historial</a></li>
                     <li><a href="{% url 'favorito' %}">Favoritos</a></li>
 
-                    <li><a href="{% url 'pooppremium' %}">Poop Premium</a></li>
+                   
                     <li><a href="{% url 'contactanos' %}">Contáctanos</a></li>
 
 
@@ -57,7 +57,7 @@
     <!--Barra Menu Principal-->
     <!--Formulario de Registro -->
     <div class="container" style="height: 70vh;">
-            <h1 id="myHeader">Registrate </h1>
+            <h1 id="myHeader">Registrar video  </h1>
         <div class="row">
             <!-- Manipular Messages-->
             {% if messages %}
@@ -104,6 +104,12 @@
 
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>foto del video :</label>
+                    <input type="file" id="img-foto" name="img_foto">
+
+                </div>
+                <hr>
 
                 <button type="submit" class="btn btn-primary">Registrar</button>
 
