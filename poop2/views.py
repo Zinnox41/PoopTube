@@ -7,10 +7,13 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.utils import serializer_helpers
 from tube.models import Video
 from .serializers import VideoSerializador
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 @csrf_exempt
 @api_view(['GET','POST'])
+
 def lista_video(request):
     if request.method == 'GET':
         m = Video.objects.all()
@@ -27,6 +30,7 @@ def lista_video(request):
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
 @api_view(['GET','PUT','DELETE'])
+
 def manipular_video(request,id):
     try:
         m = Video.objects.get(id_video = id)
