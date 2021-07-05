@@ -49,7 +49,7 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
 
-          <li><a href=""><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
+          <li><a href="{% url 'crear' %}"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
           {% if user.is_authenticated %}
           <li>
             <p>Bienvenido {{user.username}}</p>

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 #from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
-from .views import principal, historial, favorito, contactanos, contra, reproductor, listado, lista_categoria, guardar_video, eliminar_video, modificar, modificar_video, login_view, logout_view, form_login
+from .views import principal, historial, favorito, contactanos, contra, crear, reproductor, listado, lista_categoria, guardar_video, eliminar_video, modificar, modificar_video, login_view, logout_view, form_login
 
 
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     path('favorito', favorito, name="favorito"),
     path('contactanos',contactanos, name="contactanos"),
     path('contra', contra, name="contra"),
+    path('crear', crear, name="crear"),
     path('reproductor', reproductor, name="reproductor"),
     path('registro_video', login_required(lista_categoria), name="registro_video"),
     path('listado', listado, name="listado"),
