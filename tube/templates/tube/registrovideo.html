@@ -61,9 +61,16 @@
     <div class="container espaciado" style="height: 63vh;">
         <div class="row">
             <h1 id="myHeader">Registro de videos</h1>
+            {% if messages %}
+            <div>
+                {% for x in massages %}
+                <p style="color: red;">{{ x }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
         <div class="row">
-            <form action="{%url 'registro' %}"id="registro_videos" name="registro_videos" method="GET">
+            <form action=""id="registro_videos" name="registro_videos" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Codigo id:</label>

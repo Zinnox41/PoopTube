@@ -36,9 +36,9 @@
           <li><a href="{% url 'historial' %}">Historial</a></li>
           <li><a href="{% url 'favorito' %}">Favoritos</a></li>
 
-          <li><a href="{% url 'pooppremium' %}">Poop Premium</a></li>
+
           <li><a href="{% url 'contactanos' %}">Contáctanos</a></li>
-          
+
 
 
         </ul>
@@ -48,7 +48,7 @@
           </div> <button type="submit" class="btn btn-default">Buscar</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          
+
           <li><a href="{% url 'crear' %}"><span class="glyphicon glyphicon-user"></span> Crear Usuario</a></li>
           <li><a href="{% url 'ingresar' %}"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
         </ul>
@@ -59,48 +59,63 @@
   <!-- Formulario de Modificación -->
   <div class="container">
     <div class="row">
-        <!-- Manipular Messages-->
-        {% if messages %}
-        <div>
-            {% for x in messages %}
-            <p style="color: red;">{{ x }}</p><br>
-            {% endfor %}
-        </div>
-        {% endif %}
-        <form action="{% url 'modificar' %}" method="POST" id="form_modif" name="form_modif">
-            {% csrf_token %}
-
-            <div class="form-group">
-                <label for="usuario">ID de Usuario : </label>
-                <input class="form-control" value="{{ usuario_modificar.id_usuario }}" id="usuario" name="usuario" type="number" required readonly>
-            </div>
-
-            <div class="form-group">
-                <label for="nombre">Nombre del usuario: </label>
-                <input class="form-control" value="{{ usuario_modificar.nombre }}" id="nombre" name="nombre" type="text" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Correo Electronico: </label>
-                <input class="form-control" value="{{ usuario_modificar.correo }}" id="email" name="email" type="text" required>
-            </div>
-            <div class="form-group">
-                <label for="contrasena">Contraseña: </label>
-                <input class="form-control" value="{{ usuario_modificar.contra }}" id="contrasena" name="contrasena" type="text" required>
-            </div>
-            <div class="form-group">
-                <label for="recontrasena">Repetir Contraseña: </label>
-                <input class="form-control" value="{{ usuario_modificar.contra2 }}" id="reontrasena" name="recontrasena" type="text" required>
-            </div>
-
-           
-
-            <button type="submit" class="btn btn-primary">Modificar</button>
-
-        </form>
-
+      <!-- Manipular Messages-->
+      {% if messages %}
+      <div>
+        {% for x in messages %}
+        <p style="color: red;">{{ x }}</p><br>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <form action="{% url 'modificar' %" method="POST" id="form_modif" name="form_modif">
+        {% csrf_token %}
+        <div class=" form-group">
+        <label>Codigo id:</label>
+        <input class="form-control" value="{{ video_modificar.id_video}}" id="codigo" name="codigo" type="number"
+          required readonly>
     </div>
-</div>
+
+    <div class="form-group">
+      <label>URL:</label>
+      <input class="form-control" value="{{ video_modificar.url_vi}}" id="url" name="url" type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label>Nombre del video:</label>
+      <input class="form-control" value="{{ video_modificar.nombre_vi}}" id="nombre" name="nombre" type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label>Descripcion del video:</label>
+      <input class="form-control" value="{{ video_modificar.descripcion_vi}}" id="descripcion" name="descripcion"
+        type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label>Categoria del video:</label>
+      <select class="form-control" id="categoria" name="categoria">
+        {% for i in categorias_video %}
+
+        {% if i.id_categoria == video_modificar.categoria.id_categoria %}
+        <option value="{{ i.id_categoria }}" selected>{{ i.descripcion_cate }}</option>
+        {% else %}
+        <option value="{{ i.id_categoria }}">{{ i.descripcion_cate }}</option>
+        {% endif %}
+
+
+        {% endfor %}
+
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Modificar</button>
+
+
+    </form>
+
+
+
+  </div>
+  </div>
 
 
   <!--Inicio de foster-->

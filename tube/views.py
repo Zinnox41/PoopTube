@@ -38,13 +38,13 @@ def listado(request):
 def lista_categoria(request):
     categorias = Categoria.objects.all()
     contexto = {"categorias_video" : categorias}
-    return render(request,'tube/registrovideo.html',contexto)
+    return render(request,'tube/formulario.html',contexto)
 
 def guardar_video(request):
-    n_codigo = request.GET['codigo']
-    url_m = request.GET['url']
-    nombre_m = request.GET['nombre']
-    descripcion_m = request.GET['descripcion']
+    n_codigo = request.POST['codigo']
+    url_m = request.POST['url']
+    nombre_m = request.POST['nombre']
+    descripcion_m = request.POST['descripcion']
     categoria_m = request.POST['categoria']
     categoria_m2 = Categoria.objects.get(id_categoria = categoria_m )
     Usuario.objects.create(id_video = n_codigo, url_vi = url_m, nombre_vi = nombre_m, descripcion_vi = descripcion_m, categoria = categoria_m2 )
@@ -52,3 +52,43 @@ def guardar_video(request):
     messages.success(request,'video Registrado Correctamente')
 
     return redirect('registro_video')
+
+def eliminar_video(request, id):
+    video = Video.objects.get(id_video = id) #obtengo la mascota a elminar
+    video.delete() #elimino el objeto de la BD
+    messages.success(request,'Video Eliminada')
+
+    return redirect('listado')
+
+def modificar(request, id):
+    video1 = Video.objects.get(id_video = id)
+    categoria1 = Categoria.objects.all()
+
+    contexto = {
+        "video_modificar" : video1,
+        "categorias_video" : categoria1
+    }
+
+    return render(request,'tube/formulario_modificar.html', contexto)
+
+def modificar_video(request):
+    id_cod = request.POST['codigo']
+    url_m = request.POST['url']
+    nombre_m = request.POST['nombre']
+    descripcion_m = request.POST['descripcion']
+    categoria_m = request.POST['categoria']
+
+    categoria_ob = categoria.objects.get(id_categoria = categoria_m)
+
+    video_m = Video.objects.get(id_video = id_cod )
+    video_m.url_vi = url_m
+    video_m.nombre_vi = nombre_m
+    video_m.descripcion_vi = descripcion_m
+    video_m.categoria = categoria_ob
+    video_m.save()
+
+    messages.success(request,'video Modificada')
+    
+    return redirect('listado')
+
+

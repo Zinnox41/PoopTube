@@ -68,28 +68,42 @@
             </div>
             {% endif %}
 
-            <form action="" enctype="multipart/form-data" id="formulario_registro"
-                name="formulario_registro" method="POST">
+            <form action="{% url 'registro' %}" enctype="multipart/form-data" id="formulario_registro" name="formulario_registro" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                        <label for="nombre">Nombre del usuario: </label>
-                        <input class="form-control" id="nombre" name="nombre" type="text" required>
-                    </div>
-                <div class="form-group">
-                    <label for="correo">Correo electronico: </label>
-                    <input class="form-control" id="correo" name="correo" type="email" required>
+                    <label>Codigo id:</label>
+                    <input class="form-control" id="codigo" name="codigo" type="number" required>
+
                 </div>
 
                 <div class="form-group">
-                    <label for="contra">Contraseña : </label>
-                    <input class="form-control" id="contra" name="contra" type="password" required>
+                    <label>URL:</label>
+                    <input class="form-control" id="url" name="url" type="text" required>
+
                 </div>
 
                 <div class="form-group">
-                    <label for="contra2">Repita su contraseña: </label>
-                    <input class="form-control" id="contra2" name="contra2" type="password" required>
+                    <label>Nombre del video:</label>
+                    <input class="form-control" id="nombre" name="nombre" type="text" required>
+
                 </div>
-                <br>
+
+                <div class="form-group">
+                    <label>Descripcion del video:</label>
+                    <input class="form-control" id="descripcion" name="descripcion" type="text" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria del video:</label>
+                    <select class="form-control" id="categoria" name="categoria">
+                        {% for i in categorias_video %}
+                        <option value="{{ i.id_categoria }}">{{ i.descripcion_cate }}</option>
+
+                        {% endfor %}
+
+                    </select>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Registrar</button>
 
