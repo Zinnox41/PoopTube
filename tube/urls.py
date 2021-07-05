@@ -17,10 +17,12 @@ urlpatterns = [
     path('eliminar/<int:id>',eliminar_video, name="eliminar_video"),
     path('modificar_video/<int:id>',modificar, name="modificar_video"),
     path('modificar',modificar_video, name="modificar"),
+    
 
     path('login/',form_login, name="login"),
     path('sesion/',login_view, name="sesion"),
     path('logout/',logout_view,name="logout"),
     #path('logout/',LogoutView.as_view(template_name='tube/principal.html'),name="logout"),
+
 
 ]

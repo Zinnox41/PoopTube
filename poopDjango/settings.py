@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SOCIAL_AUTH_FACEBOOK_KEY = '338156601112993'
+SOCIAL_AUTH_FACEBOOK_SECRET = '09464df8d1e4ea4c59738c6570c8d72c'
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tube',
+    'social_django',
 
 ]
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'poopDjango.urls'
@@ -63,6 +67,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -136,3 +143,9 @@ MEDIA_URL = '/imagen video/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'imagen video')
 
 LOGIN_REDIRECT_URL = 'principal'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
