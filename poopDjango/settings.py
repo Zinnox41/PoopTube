@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SOCIAL_AUTH_FACEBOOK_KEY = '338156601112993'
-SOCIAL_AUTH_FACEBOOK_SECRET = '09464df8d1e4ea4c59738c6570c8d72c'
+SOCIAL_AUTH_FACEBOOK_KEY = '145068084387545'
+SOCIAL_AUTH_FACEBOOK_SECRET = '96e118bf03ab465bc1483387173eb4a3'
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tube',
     'social_django',
+   
 
 ]
 MIDDLEWARE = [

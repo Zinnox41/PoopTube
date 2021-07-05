@@ -56,3 +56,5 @@ class Favorito(models.Model):
     fecha = models.DateField(auto_now_add=True)
     usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
     video = models.ForeignKey(Video,on_delete=models.CASCADE)
+
+

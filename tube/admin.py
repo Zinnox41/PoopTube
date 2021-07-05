@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Categoria, Video, Tipo_usuario, Usuario, Comentario, Historial, Favorito
+from .models import Categoria, Video, Tipo_usuario, Usuario, Comentario, Historial, Favorito 
 
 # Register your models here.
 admin.site.register(Categoria)
