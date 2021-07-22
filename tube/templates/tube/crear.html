@@ -64,30 +64,34 @@
   <!--Barra Menu Principal-->
   <div class="container" style="height: 70vh;">
     <h1 id="myHeader">Registrate </h1>
-    <form action="principal.html" method="GET" name="formulario_crearusuario" id="formulario_CrearUsuario"
+    <form action="{% url 'crear_user' %}" method="POST" name="formulario_crearusuario" id="formulario_CrearUsuario"
       class="bla bar" onsubmit="verificarcontras(); return false">
 
       <!--usuario-->
+      {% csrf_token %}
       <div class="form-group">
         <label>Nombre de usuario:</label>
-        <input type="text" class="form-control" name="nombreu" id="nombreu" placeholder="POOPTO">
+        <input type="text" class="form-control" name="nombre_usu" id="nombre_usu" placeholder="POOPTO">
+      </div>
+      <div class="form-group">
+        <label>apellido de usuario:</label>
+        <input type="text" class="form-control" name="apellido_usu" id="apellido_usu" placeholder="POOPTO">
       </div>
       <!--correo-->
       <div class="form-group">
         <label>Correo electronico</label>
-        <input type="email" class="form-control" name="correo" id="correo" placeholder="Pooptube@ejemplo.cl">
+        <input type="email" class="form-control" name="correo_usu" id="correo_usu" placeholder="Pooptube@ejemplo.cl">
       </div>
       <!--contraseña-->
       <div class="form-group">
         <label for="pwd">Contraseña:</label>
         <input type="password" class="form-control" id="contra" placeholder="xXxXxX" name="contra">
       </div>
-      <!--repetir contraseña-->
       <div class="form-group">
-        <label>Repita su contraseña</label>
-        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="xXxXxXx">
+        <label for="pwd">repetir Contraseña:</label>
+        <input type="password" class="form-control" id="ccontra" placeholder="xXxXxX" name="ccontra">
       </div>
-      <br>
+      <!--repetir contraseña-->
 
       <!--Botones de limpiar datos y crear usuario-->
       <div class="form-group">

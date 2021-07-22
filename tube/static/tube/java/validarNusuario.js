@@ -3,12 +3,12 @@ $(document).ready(function(){
   $("#formulario_CrearUsuario").submit(function(){
     var mensaje = "Revisa los siguientes detalles en el formulario";
     //Usuario
-    if($("#nombreu").val().trim().length == 0){
+    if($("#nombre_usu").val().trim().length == 0){
       mensaje = mensaje + "<br>USUARIO" + " <br>-No ingreso usuario";
     }
     
     //Correo
-    if($("#correo").val().trim().length == 0){
+    if($("#correo_usu").val().trim().length == 0){
       mensaje = mensaje + "<br>email:" + "<br>No ingreso su correo electronico";
     }
     //Contraseña

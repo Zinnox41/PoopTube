@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path,os 
+import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,15 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m2b-)uv-glby2tha6+s=(&_xz$1s7%5w9sy$=(=7*r38xp0rt('
+SECRET_KEY = 'django-insecure-4(kyao2nuvur52_z%)@=x2&gkh^ptlvu##5#&ft^ze=+ipi7#w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SOCIAL_AUTH_FACEBOOK_KEY = '145068084387545'
-SOCIAL_AUTH_FACEBOOK_SECRET = '96e118bf03ab465bc1483387173eb4a3'
 
 # Application definition
 
@@ -44,8 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'poop2',
     'rest_framework.authtoken',
-
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,9 +53,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
-]
-
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+       ]
+    
 ROOT_URLCONF = 'poopDjango.urls'
 
 TEMPLATES = [
@@ -70,14 +69,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
-
             ],
         },
     },
 ]
-
 REST_FRAMEWORK = {
 
   'DEFAULT_AUTHENTICATION_CLASSES':[
@@ -85,10 +80,8 @@ REST_FRAMEWORK = {
     'rest_framework.authentication.TokenAuthentication',
 
   ]
+  }
 
-
-
-}
 WSGI_APPLICATION = 'poopDjango.wsgi.application'
 
 
@@ -99,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '127.0.0.1:1521/xe',
-        'USER':'PoopTube20 ',
+        'USER':'PoopTubeDef ',
         'PASSWORD':'12345',
         'TEST':{
             'USER':'default_test',
@@ -152,7 +145,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 MEDIA_URL = '/imagen video/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'imagen video')
 
@@ -164,4 +156,3 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
-

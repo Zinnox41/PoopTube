@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Video, Categoria
+from .models import Video, Categoria, Usuario,Tipo_usuario
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User 
 
 
 # Create your views here.
@@ -78,7 +79,7 @@ def modificar_video(request):
     foto_m = request.FILES['img_foto']
     categoria_m = request.POST['categoria']
 
-    categoria_ob = categoria.objects.get(id_categoria = categoria_m)
+    categoria_ob = Categoria.objects.get(id_categoria = categoria_m)
 
     video_m = Video.objects.get(id_video = n_codigo )
     video_m.url_vi = url_m
@@ -115,3 +116,16 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('principal')
+
+
+def crear_user(request):
+    
+    nombre_a= request.POST['nombre_usu'] 
+    apellido_a= request.POST['apellido_usu']
+    correo_a= request.POST['correo_usu']
+    contra_a= request.POST['contra']
+    ccontra_a= request.POST['ccontra']
+    crear_tipo_user= Tipo_usuario.objects.get(nombre_tipo_usu="normales")
+    User.objects.create_user(username = correo_a, email = correo_a, password = contra_a)
+    Usu=User.objects.get(username = correo_a)
+    Usuario.objects.create(nombre_usu = nombre_a, apellido_usu = apellido_a, correo_usu = correo_a, contra_usu = contra_a, tipo_usuario = crear_tipo_user)

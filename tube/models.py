@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Categoria(models.Model):
     id_categoria = models.IntegerField(primary_key=True, verbose_name='Id de categoria')
     descripcion_cate= models.CharField(max_length=200, verbose_name='descripcion de categoria ')
 
-    
+    def __str__(self):
+        return self.descripcion_cate
 
 class Video(models.Model):
     id_video = models.IntegerField(primary_key=True, verbose_name='Id de video')
@@ -16,7 +18,7 @@ class Video(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.url_vi
+        return self.nombre_vi
 
 class Tipo_usuario(models.Model):
     id_tipo_usu = models.IntegerField(primary_key=True, verbose_name='Id tipo de usuario')
@@ -26,12 +28,13 @@ class Tipo_usuario(models.Model):
         return self.nombre_tipo_usu
 
 class Usuario(models.Model):
-    id_usuario = models.IntegerField(primary_key=True, verbose_name='Id de usuario')
+    id_usuario = models.AutoField(primary_key=True, verbose_name='Id de usuario')
     nombre_usu = models.CharField(max_length=200, verbose_name='nombre tipo de usuario ')
     apellido_usu = models.CharField(max_length=200, verbose_name='apellido de usuario ')
     correo_usu = models.CharField(max_length=200, verbose_name='correo de usuario')
     contra_usu = models.CharField(max_length=200, verbose_name='contraseña de usuario')
     tipo_usuario = models.ForeignKey(Tipo_usuario,on_delete=models.CASCADE)
+    user=models.OneToOneField(User, blank=True ,null=True,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre_usu
