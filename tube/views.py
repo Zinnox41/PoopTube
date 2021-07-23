@@ -76,7 +76,6 @@ def modificar_video(request):
     url_m = request.POST['url']
     nombre_m = request.POST['nombre']
     descripcion_m = request.POST['descripcion']
-    foto_m = request.FILES['img_foto']
     categoria_m = request.POST['categoria']
 
     categoria_ob = Categoria.objects.get(id_categoria = categoria_m)
@@ -85,7 +84,6 @@ def modificar_video(request):
     video_m.url_vi = url_m
     video_m.nombre_vi = nombre_m
     video_m.descripcion_vi = descripcion_m
-    video_m.img_minatura = foto_m
     video_m.categoria = categoria_ob
     video_m.save()
 
