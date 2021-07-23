@@ -114,11 +114,12 @@
                 <input type="email" class="form-control" name="correo" id="correo" placeholder="Pooptube@ejemplo.com">
             </div>
 
-            <form action="home.html" method="GET" name="formulario_contacto">
+            <form action="{% url 'comentario'%}" method="POST" name="formulario_contacto">
+                {% csrf_token %}
 
                 <div class="form-group">
 
-                    <textarea class="form-control comentario" id="comentario" name="comentario" required rows="5"
+                    <textarea class="form-control comentario" id="descripcion_com" name="descripcion_com" required rows="5"
                         placeholder="Escribe tu comentario de contacto"></textarea>
 
                     <div class="form-group">

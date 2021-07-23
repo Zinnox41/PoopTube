@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Video, Categoria, Usuario,Tipo_usuario
+from .models import Video, Categoria, Usuario,Tipo_usuario, Comentario
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User 
@@ -129,3 +129,8 @@ def crear_user(request):
     User.objects.create_user(username = correo_a, email = correo_a, password = contra_a)
     Usu=User.objects.get(username = correo_a)
     Usuario.objects.create(nombre_usu = nombre_a, apellido_usu = apellido_a, correo_usu = correo_a, contra_usu = contra_a, tipo_usuario = crear_tipo_user)
+
+def comentario(request):
+    descripcion_a= request.POST['descripcion_com']
+    Comentario.objects.create(descripcion_com = descripcion_a)
+    return redirect('comentario')
